@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+
+.user-pic {
+    width: 38px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 56px;
+    background-color: #0C2D57;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main-content {
+    left: 280px;
+    width: calc(100% - 280px);
+    
+}
+
+.sidebar.active {
+    width: 280px;
+}
+
+
+.sidebar #btn-sidebar{
+    position: absolute;
+    fill: white;
+    top: 0.4rem;
+    left: 50%;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn-sidebar{
+    left: 90%;
+}
+
+.sidebar .top_side .logo_side_cont img{
+    margin-left: 15px;
+}
+
+.sidebar .top_side .logo_side_cont{
+    color: white;
+    fill: rgb(255, 255, 255);
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.sidebar.active .top_side .logo_side_cont{
+    opacity: 1;
+}
+
+.top_side .logo_side_cont svg{
+    margin-right: 5px;
+}
+
+.side_user{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.side_user p{
+    color: white;
+    opacity: 1;
+    margin: 0 0 0 1rem;
+}
+
+.user-name{
+    font-weight: 600;
+}
+
+.sidebar p{
+    opacity: 0;
+}
+
+.sidebar.active p{
+    opacity: 1;
+}
+
+.sidebar ul li{
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.8rem;
+}
+
+.sidebar ul li a:hover{
+    background-color: white;
+    color: black;
+}
+
+.sidebar ul li a svg{
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    line-height: 50px;
+}
+
+.sidebar ul{
+    padding: 0;
+}
+
+.sidebar .nav-item{
+    opacity: 0;
+    width: 200px;
+}
+
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+.sidebar ul li .tooltip_side{
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    height: 30px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: black;
+    transform: translateX(50%);
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, alpha0.2);
+    border-radius: .6rem;
+    padding: .4rem ;
+    line-height: 1.8rem;
+    visibility: hidden;
+    z-index: 20;
+    opacity: 0;
+}
+
+.sidebar ul li:hover .tooltip_side{
+    opacity: 1;
+    visibility: visible;
+  top: 5px;
+}
+
+.sidebar.active ul li .tooltip_side{
+    display: none;
+}
+
+.main-content{
+    position: relative;
+    top: 0;
+    left: 80px;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+}
+
